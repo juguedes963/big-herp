@@ -7,13 +7,13 @@ module.exports={
     },
     async create(request,response){
         
-            const { name, email, whats, city, uf } = request.body
+            const { name, email, whatsapp, city, uf } = request.body
             const id = crypt.randomBytes(4).toString('HEX')
             await conexao('ongs').insert({
                 id,
                 name,
                 email,
-                whats,
+                whatsapp,
                 city,
                 uf,
             })
